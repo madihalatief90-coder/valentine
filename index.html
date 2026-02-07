@@ -8,11 +8,11 @@
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(180deg, #fff1f5, #fdecef);
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #fff1f5, #fdecef);
       text-align: center;
     }
 
@@ -65,7 +65,7 @@
   <div class="card">
     <h1 id="title">Will you be my Valentine?</h1>
     <img id="gif" src="https://media.giphy.com/media/uw3fTCTNMbXAk/giphy.gif" alt="cute puppy eyes">
-    <p id="text">I’m hoping you’ll say yes 🥺</p>
+    <p id="text">Please say yes 🥺</p>
 
     <div>
       <button id="yesBtn" onclick="yesClicked()">Yes</button>
@@ -89,3 +89,9 @@
       const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
       const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
       noBtn.style.position = "absolute";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
+</body>
+</html>
