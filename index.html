@@ -59,4 +59,30 @@
 
 <body>
 
-  <div class="
+  <div class="card">
+    <h1 id="title">Will you be my Valentine? 💗</h1>
+
+    <img id="image"
+      src="https://media.giphy.com/media/uw3fTCTNMbXAk/giphy.gif"
+      alt="cute puppy eyes">
+
+    <p id="text">I promise lots of love 🥺</p>
+
+    <button onclick="yesClicked()">Yes 💞</button>
+  </div>
+
+  <script>
+    function yesClicked() {
+      document.getElementById("title").innerText =
+        "Best Valentine Ever 💕";
+
+      document.getElementById("text").innerText =
+        "Always together 🤍";
+
+      document.getElementById("image").src =
+        "https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif";
+    }
+  </script>
+
+</body>
+</html>
