@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Valentine 💗</title>
+  <title>Valentine 💖</title>
   <style>
     body {
       margin: 0;
@@ -12,6 +12,7 @@
       justify-content: center;
       align-items: center;
       font-family: 'Poppins', sans-serif;
+      text-align: center;
     }
 
     .card {
@@ -19,12 +20,11 @@
       padding: 30px;
       border-radius: 30px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      text-align: center;
-      max-width: 320px;
+      max-width: 350px;
     }
 
     h1 {
-      font-size: 22px;
+      font-size: 24px;
       color: #444;
       margin-bottom: 15px;
     }
@@ -32,57 +32,65 @@
     p {
       font-size: 16px;
       color: #777;
+      margin-bottom: 20px;
     }
 
     img {
       width: 220px;
       border-radius: 20px;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
 
     button {
-      background: #ffb6c1;
-      border: none;
       padding: 12px 25px;
       border-radius: 25px;
       font-size: 16px;
       cursor: pointer;
+      border: none;
+      margin: 5px;
       color: #444;
+      background-color: #ffb6c1;
       box-shadow: 0 5px 15px rgba(255,182,193,0.5);
+      position: relative;
     }
 
     button:hover {
-      background: #ffa1b5;
+      background-color: #ffa1b5;
     }
   </style>
 </head>
 
 <body>
-
   <div class="card">
-    <h1 id="title">Will you be my Valentine? 💗</h1>
+    <h1 id="title">Will you be my Valentine?</h1>
+    <img id="gif" src="https://media.giphy.com/media/uw3fTCTNMbXAk/giphy.gif" alt="cute puppy eyes">
+    <p id="text">I’m hoping you’ll say yes 🥺</p>
 
-    <img id="image"
-      src="https://media.giphy.com/media/uw3fTCTNMbXAk/giphy.gif"
-      alt="cute puppy eyes">
-
-    <p id="text">I promise lots of love 🥺</p>
-
-    <button onclick="yesClicked()">Yes 💞</button>
+    <div>
+      <button id="yesBtn" onclick="yesClicked()">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
   </div>
 
   <script>
+    // Yes button behavior
     function yesClicked() {
-      document.getElementById("title").innerText =
-        "Best Valentine Ever 💕";
-
-      document.getElementById("text").innerText =
-        "Always together 🤍";
-
-      document.getElementById("image").src =
-        "https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif";
+      document.getElementById("title").innerText = "Best Valentine Ever 💖";
+      document.getElementById("text").innerText = "Always together";
+      document.getElementById("gif").src = "https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif";
+      document.getElementById("yesBtn").style.display = "none";
+      document.getElementById("noBtn").style.display = "none";
     }
-  </script>
 
+    // Irritating No button behavior
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseenter", function() {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.position = "absolute";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
 </body>
 </html>
